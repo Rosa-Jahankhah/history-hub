@@ -1,212 +1,252 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { Slide } from "@/components/Slide";
-import { evidenceItems } from "@/data/evidence";
 
 export const metadata: Metadata = {
-  title: "She'erit Hapletah · Jewish DPs in Postwar Europe",
+  title: "She'erit Hapletah — Jewish Displaced Persons in Postwar Europe",
   description:
-    "A Yiddish 103 final project presentation on Jewish Displaced Persons in postwar Europe.",
+    "A Yiddish 103 final project on Jewish Displaced Persons in postwar Europe, drawn from the USHMM Experiencing History collection.",
 };
 
+const COLLECTION =
+  "https://perspectives.ushmm.org/collection/jewish-displaced-persons-in-postwar-europe";
+
+const objects = [
+  {
+    n: 1,
+    title: "Herbert Friedman, Purim Play Photograph",
+    type: "Photograph",
+    year: "1945",
+    source: COLLECTION,
+    body: [
+      "On Purim — the Jewish holiday that commemorates survival against an ancient persecutor — survivors in a DP camp staged a play and dressed in costume. Herbert Friedman photographed the performance. The image shows laughter, improvised costumes, and people crowded together on a makeshift stage.",
+      "What makes this object remarkable is its timing. The photograph was taken in 1945, within months of liberation, while survivors were still living in the same buildings that had served as instruments of persecution. Choosing to celebrate Purim in that space was not an accident. Purim's central theme — the defeat of an enemy who sought to destroy the Jewish people — carried an unmistakable resonance.",
+      "The photograph is evidence that survivors did not wait to begin rebuilding religious and communal life. It is also a reminder that joy and grief are not opposites. They coexisted in the camps, sometimes on the same day.",
+    ],
+  },
+  {
+    n: 2,
+    title: "Song from Deggendorf DP Camp",
+    type: "Pamphlet",
+    year: "1945",
+    source: COLLECTION,
+    body: [
+      "In the Deggendorf DP camp, survivors printed a pamphlet that included a song written and performed by camp residents. The lyrics were in Yiddish — the everyday language of Eastern European Jewish life — and the themes were homesickness, hope, and the uncertain road ahead.",
+      "The object is small and practical: a printed page, not a monument. But its existence answers an important question. What did survivors do with their first months of freedom? In part, they made culture. They printed things, performed things, and passed them around.",
+      "The choice of Yiddish is itself significant. By 1945, the communities that had spoken Yiddish as their native language — the shtetlekh, the cities, the neighborhoods — had been largely destroyed. To write and sing in Yiddish in a displaced persons camp was to insist that the language, and everything it carried, had survived.",
+    ],
+  },
+  {
+    n: 3,
+    title: "Letter from Julius Lewy to \"the liberators\"",
+    type: "Letter",
+    year: "1945",
+    source: COLLECTION,
+    body: [
+      "Julius Lewy wrote this letter to the Allied soldiers — the people he addresses as \"the liberators\" — in the months after the end of the war. He describes food shortages, bureaucratic obstacles, inadequate sanitation, and the experience of being technically free while remaining trapped in conditions that felt, in many practical ways, continuous with what had come before.",
+      "The letter is written not as a plea but as a demand. Lewy does not ask for sympathy. He points to specific failures and holds the liberating forces accountable for them. This is a document of agency: a survivor who survived the Holocaust and then immediately turned to arguing for the basic conditions of a dignified life.",
+      "The Harrison Report — delivered to President Truman in September 1945 — would make similar arguments at the level of policy. Lewy's letter makes them at the level of a person. Read together, they show that pressure for reform came both from official observers and from survivors themselves.",
+    ],
+  },
+  {
+    n: 4,
+    title: "Zvi Gurvits, \"The Book of Life in the Zeilsheim Camp\"",
+    type: "Album",
+    year: "1945",
+    source: COLLECTION,
+    body: [
+      "Zvi Gurvits created an illustrated album documenting daily life in the Zeilsheim DP camp. The album combines visual art with Hebrew and Yiddish text and records scenes of communal activity: people eating together, children at lessons, adults in conversation, religious observance.",
+      "The title — \"The Book of Life\" — is a deliberate echo of the Sefer HaChayyim, the Jewish liturgical concept of a book in which names are inscribed for the coming year. To call a record of DP camp life a \"Book of Life\" is to make a theological claim: that these people, in this place, were living. Not surviving in a minimal sense, but living in a full one.",
+      "Albums like this one were made not for outside audiences but for the communities themselves. They are internal documents — records that a community kept of its own existence. That is what makes them unusual as historical sources. They were not produced to persuade or to report. They were produced to remember.",
+    ],
+  },
+  {
+    n: 5,
+    title: "Moyshe Feygnboym, \"Why Historical Commissions?\"",
+    type: "Newspaper Article",
+    year: "1946",
+    source: COLLECTION,
+    body: [
+      "Moyshe Feygnboym published this article in the Yiddish-language press of the DP camps. The article argues for the necessity of organized historical commissions — bodies dedicated to collecting survivor testimony, preserving documents, and creating an archive of what had happened.",
+      "His central argument is one of urgency. The witnesses are alive and in one place. The documents exist. The memory is fresh. If this work is not done now, it will not be done at all. Survivors will scatter. Documents will be lost. The world will be left with silence.",
+      "What Feygnboym describes in 1946 would eventually become the Yad Vashem archive in Israel, the USHMM collections in Washington, and the USC Shoah Foundation testimony project — institutions that did not yet exist when he wrote. He was right about the urgency. Reading his article now, it is impossible not to notice that his call was answered, and that you are looking at one of the answers.",
+    ],
+  },
+];
+
 export default function Home() {
-  const featured = evidenceItems.slice(0, 3);
-
   return (
-    <div className="flex-1">
-      {/* Slide 1 — Title */}
-      <Slide tone="indigo" eyebrow="Yiddish 103 · Final Project">
-        <div className="grid items-center gap-12 md:grid-cols-[1.5fr_1fr]">
-          <div>
-            <h1 className="font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-              She'erit Hapletah
-              <span className="mt-2 block text-indigo-200">
-                The Surviving Remnant
-              </span>
-            </h1>
-            <p className="mt-8 max-w-xl text-xl leading-relaxed text-indigo-100">
-              Jewish Displaced Persons in postwar Europe — the objects they
-              made, the voices they left behind, and the memory they asked us
-              to carry.
-            </p>
-            <p className="mt-3 text-indigo-200/75">
-              Drawn from the USHMM <em>Experiencing History</em> collection.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                href="/evidence"
-                className="rounded-full bg-white px-6 py-3 text-sm font-bold text-indigo-700 shadow transition hover:bg-indigo-50"
-              >
-                Begin →
-              </Link>
-              <Link
-                href="/sources"
-                className="rounded-full border-2 border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/80"
-              >
-                Sources
-              </Link>
-            </div>
-          </div>
+    <main className="mx-auto max-w-3xl px-6 py-14 text-slate-800">
 
-          <aside className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-indigo-200">
-              Order of the talk
-            </p>
-            <ol className="mt-4 space-y-3 text-sm leading-relaxed text-indigo-50">
-              <li><span className="font-bold">1. </span>Who were the Jewish DPs? (~1 min)</li>
-              <li><span className="font-bold">2. </span>Evidence &amp; objects from the camps (~3 min)</li>
-              <li><span className="font-bold">3. </span>A survivor's voice (~1.5 min)</li>
-              <li><span className="font-bold">4. </span>How we remember — conclusion (~1 min)</li>
-            </ol>
-          </aside>
-        </div>
-      </Slide>
+      {/* Dedication */}
+      <section className="mb-14 border-l-4 border-slate-300 pl-6">
+        <p className="text-sm leading-relaxed text-slate-600">
+          This presentation is dedicated to the innocent men, women, and children who lost their
+          lives in the Holocaust. It is offered in the hope that their stories, and the stories of
+          those who survived, continue to be read, taught, and remembered.
+        </p>
+        <p className="mt-4 text-sm text-slate-500">
+          Special thanks to Professor{" "}
+          <span className="font-semibold text-slate-700">Miriam Borden</span> for her teaching and
+          guidance throughout this course.
+        </p>
+      </section>
 
-      {/* Slide 2 — Context */}
-      <Slide tone="sky" eyebrow="01 · Setting the scene">
-        <h2 className="max-w-3xl font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-          May 1945 — Europe is free.<br />But for whom?
-        </h2>
-        <div className="mt-10 grid gap-8 text-lg leading-relaxed text-slate-700 md:grid-cols-2">
+      {/* Introduction */}
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-slate-900">Introduction</h2>
+        <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
           <p>
-            About <strong className="text-slate-900">20 million people</strong> are on the move
-            across Europe. By September 1945, roughly{" "}
-            <strong className="text-slate-900">1.5 million</strong> remain in occupied Germany
-            and Austria. Around <strong className="text-slate-900">300,000</strong> of them are
-            Jewish survivors of the Holocaust.
+            When World War II ended in Europe in May 1945, roughly 20 million people were displaced
+            across the continent. Most returned home within weeks. But approximately 1.5 million
+            remained in occupied Germany and Austria by September 1945 — people who could not, or
+            would not, go back. Of these, around 300,000 were Jewish survivors of the Holocaust.
           </p>
           <p>
-            They cannot — or will not — go home. The Allies create a category:{" "}
-            <em>Displaced Person</em>. They live in former barracks, in former concentration camps,
-            in commandeered villages. The camps were supposed to last{" "}
-            <strong className="text-slate-900">months</strong>. Many lasted{" "}
-            <strong className="text-slate-900">years</strong>.
+            They were designated "Displaced Persons" — a legal and bureaucratic category created to
+            manage an unprecedented humanitarian crisis. They lived in former military barracks,
+            commandeered villages, and, in some cases, the same concentration camp buildings where
+            they had been imprisoned. The camps were designed to last months. Many lasted until 1951.
+          </p>
+          <p>
+            The five objects below are drawn from the USHMM{" "}
+            <em>Experiencing History: Holocaust Sources in Context</em> collection on Jewish
+            Displaced Persons in Postwar Europe. Each object was made, sent, or published by the
+            survivors themselves — not by observers or aid workers. That is what connects them. They
+            are primary documents of people insisting on their own presence in history.
           </p>
         </div>
-        <p className="mt-10 border-l-4 border-indigo-400 pl-5 text-slate-600">
-          Source: USHMM,{" "}
-          <a
-            className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
-            href="https://perspectives.ushmm.org/collection/jewish-displaced-persons-in-postwar-europe"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Jewish Displaced Persons in Postwar Europe
-          </a>
-          .
-        </p>
-      </Slide>
+      </section>
 
-      {/* Slide 3 — Harrison quote */}
-      <Slide tone="rose" eyebrow="02 · A document changes policy">
-        <h2 className="font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-          "What does 'liberation' mean?"
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
-          In September 1945, Earl G. Harrison delivered a scathing report to President Truman on
-          conditions in the camps. His words forced the U.S. military to change policy and recognize
-          Jewish DPs as a group with distinct, urgent needs.
-        </p>
-        <blockquote className="mt-10 max-w-3xl rounded-2xl border-l-4 border-rose-500 bg-white p-7 font-serif text-2xl italic leading-snug text-slate-900 shadow-md">
-          "Beyond knowing that they are no longer in danger of the gas chambers… they see, and
-          there is, little change… they wonder and frequently ask what 'liberation' means."
-          <footer className="mt-4 text-base not-italic text-slate-500">
-            — Earl G. Harrison, <em>Report to President Truman</em>, 1945
-          </footer>
-        </blockquote>
-      </Slide>
-
-      {/* Slide 4 — Evidence preview */}
-      <Slide tone="white" eyebrow="03 · Evidence & objects">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="max-w-2xl font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-            Five objects. Five stories.
-          </h2>
-          <Link
-            href="/evidence"
-            className="rounded-full border-2 border-indigo-600 px-5 py-2 text-sm font-bold text-indigo-600 transition hover:bg-indigo-600 hover:text-white"
-          >
-            Open all evidence →
-          </Link>
-        </div>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
-          Letters, songs, newspaper articles, documentary footage. Each object is a choice a
-          survivor made: <em>to be seen</em>.
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {featured.map((item, i) => (
-            <article
-              key={item.id}
-              className={`flex flex-col rounded-2xl p-6 shadow-sm ${
-                i === 0
-                  ? "bg-indigo-600 text-white"
-                  : i === 1
-                  ? "bg-amber-400 text-slate-900"
-                  : "bg-sky-100 text-slate-900"
-              }`}
-            >
-              <p className="text-xs font-bold uppercase tracking-wider opacity-70">
-                {item.kind} · {item.year}
+      {/* Objects */}
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-slate-900">Five Objects from the Camps</h2>
+        <div className="mt-8 space-y-16">
+          {objects.map((obj) => (
+            <article key={obj.n} id={`object-${obj.n}`}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                Object {obj.n} · {obj.type} · {obj.year}
               </p>
-              <h3 className="mt-2 font-serif text-xl">{item.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed opacity-90">
-                {item.story.slice(0, 120)}…
+              <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
+              <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+                {obj.body.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+              <p className="mt-5 text-sm text-slate-400">
+                Source:{" "}
+                <a
+                  href={obj.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-600 underline underline-offset-4 hover:text-slate-900"
+                >
+                  USHMM — Jewish Displaced Persons in Postwar Europe
+                </a>
               </p>
-              <Link
-                href={`/evidence#${item.id}`}
-                className="mt-4 text-sm font-bold underline underline-offset-4"
-              >
-                Read full story →
-              </Link>
             </article>
           ))}
         </div>
-      </Slide>
+      </section>
 
-      {/* Slide 5 — Voices teaser */}
-      <Slide tone="navy" eyebrow="04 · Survivor voices">
-        <h2 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
-          From an object to a living voice.
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
-          Objects are silent. Oral history gives back the breath between sentences. In the video,
-          one short clip — under a minute — and the survivor speaks for themselves.
-        </p>
-        <div className="mt-10">
-          <Link
-            href="/voices"
-            className="rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-900 transition hover:bg-slate-100"
-          >
-            Survivor voices →
-          </Link>
+      {/* Conclusion */}
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-slate-900">Conclusion</h2>
+        <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+          <p>
+            These five objects share a quality that is easy to overlook: they were all made in 1945
+            or 1946, within the first year after liberation. Survivors did not wait for historians to
+            arrive. They photographed Purim plays, printed songs, wrote letters of complaint, drew
+            illustrated albums, and argued in newspapers for the creation of archives. Memory, for
+            them, was not a future project. It was an immediate one.
+          </p>
+          <p>
+            Moyshe Feygnboym asked in 1946 why historical commissions were necessary. His answer
+            was: because the witnesses are here now, and they will not always be. That answer has
+            not changed. The witnesses are gone. What remains are these objects, and the
+            institutions — including the USHMM — that answered his call.
+          </p>
+          <p>
+            To remember them as humanity means to continue that work: to name the people behind
+            the documents, to read the sources in the languages they chose, and to pass the
+            evidence on to the next person who needs it.
+          </p>
         </div>
-      </Slide>
+      </section>
 
-      {/* Slide 6 — Remembrance teaser */}
-      <Slide tone="amber" eyebrow="05 · Remembrance">
-        <h2 className="max-w-3xl font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-          How should we remember them — as humanity?
-        </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-800">
-          Survivors organized historical commissions, newspapers, and theaters{" "}
-          <em>inside the camps</em>. They began the work of memory themselves.
-          Our job is to keep it going.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            href="/remembrance"
-            className="rounded-full bg-slate-900 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-700"
-          >
-            Read the conclusion →
-          </Link>
-          <Link
-            href="/sources"
-            className="rounded-full border-2 border-slate-900/40 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
-          >
-            Sources used
-          </Link>
+      {/* Sources */}
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-slate-900">Sources</h2>
+        <div className="mt-5 space-y-3 text-sm leading-7 text-slate-600">
+          <p>
+            All five objects are from:{" "}
+            <a
+              href={COLLECTION}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-slate-900"
+            >
+              USHMM, <em>Experiencing History: Holocaust Sources in Context</em> — Jewish Displaced
+              Persons in Postwar Europe
+            </a>
+            .
+          </p>
+          <p>
+            Background context:{" "}
+            <a
+              href="https://encyclopedia.ushmm.org/content/en/article/displaced-persons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-slate-900"
+            >
+              USHMM Holocaust Encyclopedia — Displaced Persons
+            </a>
+            .
+          </p>
+          <p>
+            For the Harrison Report:{" "}
+            <a
+              href="https://encyclopedia.ushmm.org/content/en/article/the-harrison-report"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-slate-900"
+            >
+              USHMM Holocaust Encyclopedia — The Harrison Report
+            </a>
+            .
+          </p>
+          <p>
+            Scholarly context:{" "}
+            <a
+              href="https://yivoencyclopedia.org/article.aspx/Displaced_Persons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-slate-900"
+            >
+              YIVO Encyclopedia — Displaced Persons
+            </a>
+            .
+          </p>
+          <p>
+            Oral history archive:{" "}
+            <a
+              href="https://collections.ushmm.org/search/?f%5Bavailability%5D%5B%5D=Online&q=displaced+persons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-slate-900"
+            >
+              USHMM Oral History Collection (online)
+            </a>
+            .
+          </p>
         </div>
-      </Slide>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-200 pt-8 text-xs text-slate-400">
+        <p>
+          Prepared for Yiddish 103. With gratitude to Professor{" "}
+          <span className="text-slate-500">Miriam Borden</span>.
+        </p>
+      </footer>
+    </main>
   );
 }

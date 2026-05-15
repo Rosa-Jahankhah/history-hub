@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
-import { DedicationBanner } from "@/components/DedicationBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -40,7 +39,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-900">
-        <DedicationBanner />
         <SiteHeader />
         {children}
       </body>
