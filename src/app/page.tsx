@@ -110,7 +110,7 @@ const objects: HistoryObject[] = [
     ],
     translation: {
       heading: "Translation of the article (from Yiddish)",
-      letter: `M. Y. Feygnboym, Head of the Historical Commission\n\nMany among us still ask: Why do we need the Historical Commissions? Is the Nuremberg trial not inundated with documents on the Jews? What can we poor Jews contribute?\n\nAfter liberation we were quickly disappointed. Our neighbors were unwilling to give objective accounts — on the contrary, they tried to diminish the Jewish tragedy, to whitewash it. Churchill told the English Parliament in February 1945 that the Nazis "as people were saying" had supposedly murdered upwards of three million Polish Jews. The Jewish Central Committee had to correct him: it is not "as people were saying" — the Nazis killed 3,250,000 Polish Jews.\n\nThe great powers compiled a lot of material. But they did not have the Jewish problem in mind. Many documents that pertain directly to us are not being compiled by the great powers at all. And even the documents they do have only show how the murderers dealt with us — not how we lived, how we suffered, how we resisted.\n\nBefore the war, historians had the Jewish press, folk culture, community records, literature, pictures. Today all this has disappeared.\n\nWe, the survivors, the living witnesses, must create a foundation for the historians. Therefore, the testimony of every surviving Jew is of immense value. Every song, every photograph, every joke, every creative work — anything that can illuminate the martyrdom of our tragic generation.\n\nIt is the duty of every Jew who survived to make themselves available to the Historical Commissions whenever asked.`,
+      letter: `M. Y. Feygnboym, Head of the Historical Commission\n\nMany among us still ask: Why do we need the Historical Commissions? Is the Nuremberg trial not inundated with a deluge of documents on the Jews? What can we poor Jews contribute?\n\nAfter liberation we were quickly disappointed. Our neighbors were unwilling to give objective accounts — on the contrary, they tried to diminish the Jewish tragedy, to whitewash it. Churchill told the English Parliament in February 1945 that the Nazis "as people were saying" had supposedly murdered upwards of three million Polish Jews. The Jewish Central Committee had to correct him: it is not "as people were saying" — the Nazis killed 3,250,000 Polish Jews.\n\nThe great powers compiled a lot of material. But they did not have the Jewish problem in mind. Many documents that pertain directly to us are not being compiled by the great powers at all. And even the documents they do have only show how the murderers dealt with us — not how we lived, how we suffered, how we resisted.\n\nWe, the survivors, the living witnesses, must create a foundation for the historians. Therefore, the testimony of every surviving Jew is of immense value. Every song, every photograph, every joke, every creative work — anything that can illuminate the martyrdom of our tragic generation.\n\nIt is the duty of every Jew who survived to make themselves available to the Historical Commissions whenever asked.`,
       song: `"We, the survivors, the surviving witnesses, must create a foundation for the historian that will take the place of the aforementioned sources so that he may create for himself a clear picture of what happened to us and among us."\n\n— Moyshe Feygnboym, Fun letstn khurbn ("From the Last Extermination"), Munich, 1946`,
     },
     body: [
@@ -123,221 +123,194 @@ const objects: HistoryObject[] = [
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-14 text-slate-800">
+    <div className="mx-auto flex max-w-5xl gap-10 px-4 py-12 sm:px-6">
 
-      {/* Dedication */}
-      <section className="mb-14 border-l-4 border-slate-300 pl-6">
-        <p className="text-sm leading-relaxed text-slate-600">
-          This presentation is dedicated to the innocent men, women, and children who lost their
-          lives in the Holocaust. It is offered in the hope that their stories, and the stories of
-          those who survived, continue to be read, taught, and remembered.
-        </p>
-        <p className="mt-4 text-sm text-slate-500">
-          Special thanks to Professor{" "}
-          <span className="font-semibold text-slate-700">Miriam Borden</span> for her teaching and
-          guidance throughout this course.
-        </p>
-      </section>
+      {/* Sidebar */}
+      <aside className="hidden w-52 shrink-0 lg:block">
+        <nav className="sticky top-24 space-y-1 text-sm">
+          <a
+            href="#introduction"
+            className="block rounded px-3 py-2 font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+          >
+            Introduction
+          </a>
 
-      {/* Introduction */}
-      <section className="mb-14">
-        <h2 className="font-serif text-3xl text-slate-900">Introduction</h2>
-        <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-          <p>
-            When World War II ended in Europe in May 1945, roughly 20 million people were displaced
-            across the continent. Most returned home within weeks. But approximately 1.5 million
-            remained in occupied Germany and Austria by September 1945 — people who could not, or
-            would not, go back. Of these, around 300,000 were Jewish survivors of the Holocaust.
-          </p>
-          <p>
-            They were designated "Displaced Persons" — a legal and bureaucratic category created to
-            manage an unprecedented humanitarian crisis. They lived in former military barracks,
-            commandeered villages, and, in some cases, the same concentration camp buildings where
-            they had been imprisoned. The camps were designed to last months. Many lasted until 1951.
-          </p>
-          <p>
-            The five objects below are drawn from the USHMM{" "}
-            <em>Experiencing History: Holocaust Sources in Context</em> collection on Jewish
-            Displaced Persons in Postwar Europe. Each object was made, sent, or published by the
-            survivors themselves — not by observers or aid workers. That is what connects them. They
-            are primary documents of people insisting on their own presence in history.
-          </p>
-        </div>
-      </section>
-
-      {/* Objects */}
-      <section className="mb-14">
-        <h2 className="font-serif text-3xl text-slate-900">Five Objects from the Camps</h2>
-
-        {/* Jump links */}
-        <nav className="mt-6 space-y-2 border-l-4 border-slate-200 pl-5">
-          {objects.map((obj) => (
+          <div>
             <a
-              key={obj.n}
-              href={`#object-${obj.n}`}
-              className="flex items-baseline gap-3 text-sm text-slate-600 hover:text-slate-900"
+              href="#evidence"
+              className="block rounded px-3 py-2 font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900"
             >
-              <span className="shrink-0 font-semibold text-slate-400">{obj.n}.</span>
-              <span className="underline underline-offset-4">{obj.title}</span>
-              <span className="text-slate-400">— {obj.type}, {obj.year}</span>
+              Evidence
             </a>
-          ))}
-        </nav>
-
-        <div className="mt-14 space-y-16">
-          {objects.map((obj) => (
-            <article key={obj.n} id={`object-${obj.n}`}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                Object {obj.n} · {obj.type} · {obj.year}
-              </p>
-              <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
-
-              {/* Photo carousel */}
-              {obj.images && obj.images.length > 0 && (
-                <PhotoCarousel photos={obj.images} title={obj.title} />
-              )}
-
-              {/* Translation block */}
-              {obj.translation && (
-                <div className="mt-6 rounded border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                    {obj.translation.heading}
-                  </p>
-                  <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
-                    {obj.translation.letter}
-                  </p>
-                  <div className="mt-5 border-t border-slate-200 pt-5">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                      The Deggendorf Song
-                    </p>
-                    <p className="mt-2 whitespace-pre-line font-serif text-sm italic leading-7 text-slate-700">
-                      {obj.translation.song}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-                {obj.body.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-              <p className="mt-5 text-sm text-slate-400">
-                Source:{" "}
+            <div className="ml-3 mt-1 space-y-1 border-l border-slate-200 pl-3">
+              {objects.map((obj) => (
                 <a
-                  href={obj.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-600 underline underline-offset-4 hover:text-slate-900"
+                  key={obj.n}
+                  href={`#object-${obj.n}`}
+                  className="block rounded py-1 text-xs text-slate-500 hover:text-slate-900"
                 >
-                  USHMM — Jewish Displaced Persons in Postwar Europe
+                  {obj.n}. {obj.title.length > 35 ? obj.title.slice(0, 35) + "…" : obj.title}
                 </a>
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+              ))}
+            </div>
+          </div>
 
-      {/* Conclusion */}
-      <section className="mb-14">
-        <h2 className="font-serif text-3xl text-slate-900">Conclusion</h2>
-        <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-          <p>
-            These five objects share a quality that is easy to overlook: they were all made in 1945
-            or 1946, within the first year after liberation. Survivors did not wait for historians to
-            arrive. They photographed Purim plays, printed songs, wrote letters of complaint, drew
-            illustrated albums, and argued in newspapers for the creation of archives. Memory, for
-            them, was not a future project. It was an immediate one.
-          </p>
-          <p>
-            Moyshe Feygnboym asked in 1946 why historical commissions were necessary. His answer
-            was: because the witnesses are here now, and they will not always be. That answer has
-            not changed. The witnesses are gone. What remains are these objects, and the
-            institutions — including the USHMM — that answered his call.
-          </p>
-          <p>
-            To remember them as humanity means to continue that work: to name the people behind
-            the documents, to read the sources in the languages they chose, and to pass the
-            evidence on to the next person who needs it.
-          </p>
-        </div>
-      </section>
+          <a
+            href="#interview"
+            className="block rounded px-3 py-2 font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+          >
+            Interview
+          </a>
 
-      {/* Sources */}
-      <section className="mb-14">
-        <h2 className="font-serif text-3xl text-slate-900">Sources</h2>
-        <div className="mt-5 space-y-3 text-sm leading-7 text-slate-600">
-          <p>
-            All five objects are from:{" "}
-            <a
-              href={COLLECTION}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-slate-900"
-            >
-              USHMM, <em>Experiencing History: Holocaust Sources in Context</em> — Jewish Displaced
-              Persons in Postwar Europe
-            </a>
-            .
+          <a
+            href="https://perspectives.ushmm.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded px-3 py-2 font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+          >
+            Sources ↗
+          </a>
+        </nav>
+      </aside>
+
+      {/* Main content */}
+      <main className="min-w-0 flex-1 text-slate-800">
+
+        {/* Dedication */}
+        <div className="mb-12 border-l-4 border-slate-300 pl-6">
+          <p className="text-sm leading-relaxed text-slate-600">
+            This presentation is dedicated to the innocent men, women, and children who lost their
+            lives in the Holocaust. It is offered in the hope that their stories, and the stories of
+            those who survived, continue to be read, taught, and remembered.
           </p>
-          <p>
-            Background context:{" "}
-            <a
-              href="https://encyclopedia.ushmm.org/content/en/article/displaced-persons"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-slate-900"
-            >
-              USHMM Holocaust Encyclopedia — Displaced Persons
-            </a>
-            .
-          </p>
-          <p>
-            For the Harrison Report:{" "}
-            <a
-              href="https://encyclopedia.ushmm.org/content/en/article/the-harrison-report"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-slate-900"
-            >
-              USHMM Holocaust Encyclopedia — The Harrison Report
-            </a>
-            .
-          </p>
-          <p>
-            Scholarly context:{" "}
-            <a
-              href="https://yivoencyclopedia.org/article.aspx/Displaced_Persons"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-slate-900"
-            >
-              YIVO Encyclopedia — Displaced Persons
-            </a>
-            .
-          </p>
-          <p>
-            Oral history archive:{" "}
-            <a
-              href="https://collections.ushmm.org/search/?f%5Bavailability%5D%5B%5D=Online&q=displaced+persons"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-slate-900"
-            >
-              USHMM Oral History Collection (online)
-            </a>
-            .
+          <p className="mt-4 text-sm text-slate-500">
+            Special thanks to Professor{" "}
+            <span className="font-semibold text-slate-700">Miriam Borden</span> for her teaching
+            and guidance throughout this course.
           </p>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 pt-8 text-xs text-slate-400">
-        <p>
-          Prepared for Yiddish 103. With gratitude to Professor{" "}
-          <span className="text-slate-500">Miriam Borden</span>.
-        </p>
-      </footer>
-    </main>
+        {/* Introduction */}
+        <section id="introduction" className="mb-14 scroll-mt-24">
+          <h2 className="font-serif text-3xl text-slate-900">Introduction</h2>
+          <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+            <p>
+              When World War II ended in Europe in May 1945, roughly 20 million people were
+              displaced across the continent. Most returned home within weeks. But approximately
+              1.5 million remained in occupied Germany and Austria by September 1945 — people who
+              could not, or would not, go back. Of these, around 300,000 were Jewish survivors of
+              the Holocaust.
+            </p>
+            <p>
+              They were designated "Displaced Persons" — a legal and bureaucratic category created
+              to manage an unprecedented humanitarian crisis. They lived in former military
+              barracks, commandeered villages, and, in some cases, the same concentration camp
+              buildings where they had been imprisoned. The camps were designed to last months.
+              Many lasted until 1951.
+            </p>
+            <p>
+              The five objects below are drawn from the USHMM{" "}
+              <em>Experiencing History: Holocaust Sources in Context</em> collection on Jewish
+              Displaced Persons in Postwar Europe. Each object was made, sent, or published by the
+              survivors themselves — not by observers or aid workers. That is what connects them.
+              They are primary documents of people insisting on their own presence in history.
+            </p>
+          </div>
+        </section>
+
+        {/* Evidence */}
+        <section id="evidence" className="mb-14 scroll-mt-24">
+          <h2 className="font-serif text-3xl text-slate-900">Evidence</h2>
+          <nav className="mt-6 space-y-2 border-l-4 border-slate-200 pl-5">
+            {objects.map((obj) => (
+              <a
+                key={obj.n}
+                href={`#object-${obj.n}`}
+                className="flex flex-wrap items-baseline gap-2 text-sm text-slate-600 hover:text-slate-900"
+              >
+                <span className="shrink-0 font-semibold text-slate-400">{obj.n}.</span>
+                <span className="underline underline-offset-4">{obj.title}</span>
+                <span className="text-slate-400">— {obj.type}, {obj.year}</span>
+              </a>
+            ))}
+          </nav>
+
+          <div className="mt-14 space-y-16">
+            {objects.map((obj) => (
+              <article key={obj.n} id={`object-${obj.n}`} className="scroll-mt-24">
+                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                  Object {obj.n} · {obj.type} · {obj.year}
+                </p>
+                <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
+
+                {obj.images && obj.images.length > 0 && (
+                  <PhotoCarousel photos={obj.images} title={obj.title} />
+                )}
+
+                {obj.translation && (
+                  <div className="mt-6 rounded border border-slate-200 bg-slate-50 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                      {obj.translation.heading}
+                    </p>
+                    <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
+                      {obj.translation.letter}
+                    </p>
+                    <div className="mt-5 border-t border-slate-200 pt-5">
+                      <p className="mt-2 whitespace-pre-line font-serif text-sm italic leading-7 text-slate-700">
+                        {obj.translation.song}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+                  {obj.body.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+                <p className="mt-5 text-sm text-slate-400">
+                  Source:{" "}
+                  <a
+                    href={obj.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 underline underline-offset-4 hover:text-slate-900"
+                  >
+                    USHMM — Jewish Displaced Persons in Postwar Europe
+                  </a>
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Interview */}
+        <section id="interview" className="mb-14 scroll-mt-24">
+          <h2 className="font-serif text-3xl text-slate-900">Interview</h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            The following interview provides a survivor's firsthand account. Listen carefully to
+            the language used to describe the experience of displacement, loss, and rebuilding —
+            these are details that documents alone cannot convey.
+          </p>
+          <div className="mt-6 aspect-video w-full overflow-hidden rounded border border-slate-200 bg-slate-900 shadow-sm">
+            <iframe
+              src="https://www.youtube.com/embed/xzeXaqf-xWM"
+              title="Survivor interview"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-200 pt-8 text-xs text-slate-400">
+          <p>
+            Prepared for Yiddish 103. With gratitude to Professor{" "}
+            <span className="text-slate-500">Miriam Borden</span>.
+          </p>
+        </footer>
+      </main>
+    </div>
   );
 }
