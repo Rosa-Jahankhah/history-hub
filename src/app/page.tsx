@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "She'erit Hapletah — Jewish Displaced Persons in Postwar Europe",
@@ -9,7 +10,17 @@ export const metadata: Metadata = {
 const COLLECTION =
   "https://perspectives.ushmm.org/collection/jewish-displaced-persons-in-postwar-europe";
 
-const objects = [
+type HistoryObject = {
+  n: number;
+  title: string;
+  type: string;
+  year: string;
+  source: string;
+  images?: { src: string; caption: string }[];
+  body: string[];
+};
+
+const objects: HistoryObject[] = [
   {
     n: 1,
     title: "Herbert Friedman, Purim Play Photograph",
@@ -28,6 +39,12 @@ const objects = [
     type: "Pamphlet",
     year: "1945",
     source: COLLECTION,
+    images: [
+      { src: "/images/deggendorf-1.jpeg", caption: "1" },
+      { src: "/images/deggendorf-2.jpeg", caption: "2" },
+      { src: "/images/deggendorf-3.jpeg", caption: "3" },
+      { src: "/images/deggendorf-4.jpeg", caption: "4" },
+    ],
     body: [
       "In the Deggendorf DP camp, survivors printed a pamphlet that included a song written and performed by camp residents. The lyrics were in Yiddish — the everyday language of Eastern European Jewish life — and the themes were homesickness, hope, and the uncertain road ahead.",
       "The object is small and practical: a printed page, not a monument. But its existence answers an important question. What did survivors do with their first months of freedom? In part, they made culture. They printed things, performed things, and passed them around.",
@@ -142,6 +159,29 @@ export default function Home() {
                 Object {obj.n} · {obj.type} · {obj.year}
               </p>
               <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
+
+              {/* Photo gallery — shown in numbered order */}
+              {obj.images && obj.images.length > 0 && (
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {obj.images.map((img) => (
+                    <figure key={img.src} className="flex flex-col gap-1">
+                      <div className="relative aspect-[3/4] w-full overflow-hidden rounded border border-slate-200 bg-slate-50">
+                        <Image
+                          src={img.src}
+                          alt={`${obj.title} — image ${img.caption}`}
+                          fill
+                          sizes="(min-width: 640px) 25vw, 50vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      <figcaption className="text-center text-xs text-slate-400">
+                        {img.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
+
               <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
                 {obj.body.map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
