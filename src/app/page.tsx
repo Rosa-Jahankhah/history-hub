@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
 
 export const metadata: Metadata = {
   title: "She'erit Hapletah — Jewish Displaced Persons in Postwar Europe",
@@ -26,12 +26,16 @@ const objects: HistoryObject[] = [
     n: 1,
     title: "Herbert Friedman, Purim Play Photograph",
     type: "Photograph",
-    year: "1945",
-    source: COLLECTION,
+    year: "April 15, 1946",
+    source:
+      "https://perspectives.ushmm.org/item/herbert-friedman-purim-play-photograph/collection/jewish-displaced-persons-in-postwar-europe",
+    images: [
+      { src: "/images/purim-photo.jpg", caption: "Purim play at Landsberg DP camp, 1946" },
+    ],
     body: [
-      "On Purim — the Jewish holiday that commemorates survival against an ancient persecutor — survivors in a DP camp staged a play and dressed in costume. Herbert Friedman photographed the performance. The image shows laughter, improvised costumes, and people crowded together on a makeshift stage.",
-      "What makes this object remarkable is its timing. The photograph was taken in 1945, within months of liberation, while survivors were still living in the same buildings that had served as instruments of persecution. Choosing to celebrate Purim in that space was not an accident. Purim's central theme — the defeat of an enemy who sought to destroy the Jewish people — carried an unmistakable resonance.",
-      "The photograph is evidence that survivors did not wait to begin rebuilding religious and communal life. It is also a reminder that joy and grief are not opposites. They coexisted in the camps, sometimes on the same day.",
+      "Even as DP camps struggled to meet basic physical needs, Jewish survivors set out to rebuild Jewish culture. Their efforts took many forms — cultural events, education, political activism. One key question this raises: how did these camps, despite all their hardships, become centers of Jewish life after the Holocaust?",
+      "Two holidays carried special meaning in the camps: Hanukkah and Purim. Both had direct parallels to what survivors had just lived through. Purim celebrates the rescue of Jews from a genocidal Persian official. In 1946, in a DP camp, that story did not need much explanation. Scholars note that even secular Jews embraced these holidays as expressions of Jewish identity and collective survival.",
+      "The Purim play — the purimshpil — had traditionally been a way for Jewish communities to mock their oppressors. In the DP camps, some plays became outright revenge fantasies: Hitler on the gallows, Nazi leaders begging in the street. Herbert Friedman photographed one such performance at the Landsberg DP camp on April 15, 1946. The photograph is evidence that joy and defiance coexisted in the camps — sometimes on the same stage.",
     ],
   },
   {
@@ -166,26 +170,9 @@ export default function Home() {
               </p>
               <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
 
-              {/* Photo gallery — shown in numbered order */}
+              {/* Photo carousel */}
               {obj.images && obj.images.length > 0 && (
-                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  {obj.images.map((img) => (
-                    <figure key={img.src} className="flex flex-col gap-1">
-                      <div className="relative aspect-[3/4] w-full overflow-hidden rounded border border-slate-200 bg-slate-50">
-                        <Image
-                          src={img.src}
-                          alt={`${obj.title} — image ${img.caption}`}
-                          fill
-                          sizes="(min-width: 640px) 25vw, 50vw"
-                          className="object-cover"
-                        />
-                      </div>
-                      <figcaption className="text-center text-xs text-slate-400">
-                        {img.caption}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
+                <PhotoCarousel photos={obj.images} title={obj.title} />
               )}
 
               {/* Translation block */}
