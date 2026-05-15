@@ -127,7 +127,7 @@ export default function Home() {
 
       {/* Sidebar */}
       <aside className="hidden w-52 shrink-0 lg:block">
-        <nav className="sticky top-24 space-y-1 text-sm">
+        <nav className="sticky top-[105px] space-y-1 text-sm">
           <a
             href="#introduction"
             className="block rounded px-3 py-2 font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900"
@@ -175,20 +175,6 @@ export default function Home() {
 
       {/* Main content */}
       <main className="min-w-0 flex-1 text-slate-800">
-
-        {/* Dedication */}
-        <div className="mb-12 border-l-4 border-slate-300 pl-6">
-          <p className="text-sm leading-relaxed text-slate-600">
-            This presentation is dedicated to the innocent men, women, and children who lost their
-            lives in the Holocaust. It is offered in the hope that their stories, and the stories of
-            those who survived, continue to be read, taught, and remembered.
-          </p>
-          <p className="mt-4 text-sm text-slate-500">
-            Special thanks to Professor{" "}
-            <span className="font-semibold text-slate-700">Miriam Borden</span> for her teaching
-            and guidance throughout this course.
-          </p>
-        </div>
 
         {/* Introduction */}
         <section id="introduction" className="mb-14 scroll-mt-24">

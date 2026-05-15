@@ -40,6 +40,16 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-900">
         <SiteHeader />
+        <div className="sticky top-[57px] z-20 border-b border-slate-200 bg-white/95 px-6 py-2.5 backdrop-blur-sm">
+          <p className="text-xs leading-snug text-slate-500">
+            Dedicated to the innocent men, women, and children who lost their lives in the
+            Holocaust.{" "}
+            <span className="text-slate-400">
+              Special thanks to Professor{" "}
+              <span className="font-semibold text-slate-600">Miriam Borden</span>.
+            </span>
+          </p>
+        </div>
         {children}
       </body>
     </html>
