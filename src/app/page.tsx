@@ -119,7 +119,23 @@ export default function Home() {
       {/* Objects */}
       <section className="mb-14">
         <h2 className="font-serif text-3xl text-slate-900">Five Objects from the Camps</h2>
-        <div className="mt-8 space-y-16">
+
+        {/* Jump links */}
+        <nav className="mt-6 space-y-2 border-l-4 border-slate-200 pl-5">
+          {objects.map((obj) => (
+            <a
+              key={obj.n}
+              href={`#object-${obj.n}`}
+              className="flex items-baseline gap-3 text-sm text-slate-600 hover:text-slate-900"
+            >
+              <span className="shrink-0 font-semibold text-slate-400">{obj.n}.</span>
+              <span className="underline underline-offset-4">{obj.title}</span>
+              <span className="text-slate-400">— {obj.type}, {obj.year}</span>
+            </a>
+          ))}
+        </nav>
+
+        <div className="mt-14 space-y-16">
           {objects.map((obj) => (
             <article key={obj.n} id={`object-${obj.n}`}>
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
