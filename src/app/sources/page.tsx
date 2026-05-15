@@ -6,47 +6,54 @@ import { evidenceItems } from "@/data/evidence";
 export const metadata: Metadata = {
   title: "Sources",
   description:
-    "Sources used in this presentation, including the USHMM ‘Experiencing History’ collection.",
+    "All sources used in this presentation on Jewish Displaced Persons in postwar Europe.",
 };
 
 export default function SourcesPage() {
   return (
     <div className="flex-1">
-      <Slide tone="ivory" eyebrow="Sources">
-        <h1 className="max-w-3xl font-serif text-4xl leading-tight text-stone-900 sm:text-5xl">
-          What I used to make this presentation
+      <Slide tone="indigo" eyebrow="Sources">
+        <h1 className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
+          Sources used in this presentation
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-stone-800">
-          Primary sources first, then context articles and oral history
-          archives. All links open in a new tab so you can pull them up live
-          during your video if you want.
+        <p className="mt-6 max-w-3xl text-xl leading-relaxed text-indigo-100">
+          Primary sources first, then context articles and oral history archives. All links open in
+          a new tab.
         </p>
+      </Slide>
 
-        <h2 className="mt-12 font-serif text-2xl text-stone-900">
+      <Slide tone="white" eyebrow="Collections & encyclopedias">
+        <h2 className="font-serif text-3xl text-slate-900">
           Collections &amp; encyclopedias
         </h2>
-        <ul className="mt-4 grid gap-4 md:grid-cols-2">
-          {historyLinks.map((link) => (
+        <ul className="mt-8 grid gap-5 md:grid-cols-2">
+          {historyLinks.map((link, i) => (
             <li
               key={link.id}
-              className="rounded-xl border border-stone-900/12 bg-white/70 p-5 shadow-sm"
+              className={`rounded-2xl p-6 shadow-sm ${
+                i % 3 === 0
+                  ? "bg-indigo-50 border border-indigo-200"
+                  : i % 3 === 1
+                  ? "bg-sky-50 border border-sky-200"
+                  : "bg-rose-50 border border-rose-200"
+              }`}
             >
               <a
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-serif text-lg text-stone-900 hover:underline"
+                className="font-serif text-lg font-semibold text-indigo-700 hover:underline underline-offset-4"
               >
                 {link.title}
               </a>
-              <p className="mt-2 text-sm leading-relaxed text-stone-700">
+              <p className="mt-2 text-sm leading-relaxed text-slate-700">
                 {link.description}
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {link.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-amber-100/80 px-2.5 py-0.5 text-xs text-amber-900/80"
+                    className="rounded-full bg-white px-3 py-0.5 text-xs font-semibold text-slate-700 shadow-sm"
                   >
                     {t}
                   </span>
@@ -55,33 +62,49 @@ export default function SourcesPage() {
             </li>
           ))}
         </ul>
+      </Slide>
 
-        <h2 className="mt-12 font-serif text-2xl text-stone-900">
-          Individual objects shown in the talk
+      <Slide tone="sky" eyebrow="Objects shown in the talk">
+        <h2 className="font-serif text-3xl text-slate-900">
+          The five objects shown in the talk
         </h2>
-        <p className="mt-2 max-w-2xl text-sm text-stone-700">
-          Each object below is from the USHMM <em>Experiencing History</em>{" "}
-          collection. Open the collection, click into the item, and copy the
-          page URL into <code>src/data/evidence.ts</code> to make these go
-          straight to the item.
+        <p className="mt-2 max-w-2xl text-slate-600">
+          All from the USHMM <em>Experiencing History</em> collection. Open an item on USHMM, copy
+          the page URL, and paste it into{" "}
+          <code className="rounded bg-slate-900/10 px-1.5 py-0.5 text-sm">
+            src/data/evidence.ts
+          </code>{" "}
+          to link directly to it.
         </p>
-        <ol className="mt-6 grid list-decimal gap-2 pl-6 text-stone-800 marker:text-stone-500 md:grid-cols-2">
-          {evidenceItems.map((item) => (
-            <li key={item.id}>
+        <ol className="mt-8 space-y-3 pl-6 text-slate-800">
+          {evidenceItems.map((item, i) => (
+            <li key={item.id} className="list-decimal">
               <a
                 href={item.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium hover:underline"
+                className="font-semibold text-indigo-700 hover:underline underline-offset-4"
               >
                 {item.title}
               </a>{" "}
-              <span className="text-stone-600">
-                — {item.kind}, {item.year}
+              <span className="text-slate-500">
+                — {item.kind}, {item.year}. {item.label}.
               </span>
             </li>
           ))}
         </ol>
+      </Slide>
+
+      <Slide tone="amber" fill={false}>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-700">
+          Special thanks
+        </p>
+        <p className="mt-3 font-serif text-2xl text-slate-900 sm:text-3xl">
+          Professor <strong>Miriam Borden</strong>
+        </p>
+        <p className="mt-2 max-w-xl text-slate-800">
+          Thank you for teaching this course and for guiding this research.
+        </p>
       </Slide>
     </div>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { DedicationBanner } from "@/components/DedicationBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -21,11 +22,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "History Hub",
-    template: "%s | History Hub",
+    default: "She'erit Hapletah · Yiddish 103",
+    template: "%s | She'erit Hapletah",
   },
   description:
-    "Curated history links, archive notes, and a research assistant for source-aware learning.",
+    "A Yiddish 103 final project on Jewish Displaced Persons in postwar Europe. Dedicated to the innocent lives lost in the Holocaust.",
 };
 
 export default function RootLayout({
@@ -38,7 +39,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#faf7f2] font-sans text-amber-950">
+      <body className="min-h-full flex flex-col bg-white font-sans text-slate-900">
+        <DedicationBanner />
         <SiteHeader />
         {children}
       </body>

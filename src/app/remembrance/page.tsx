@@ -5,42 +5,46 @@ import { Slide } from "@/components/Slide";
 export const metadata: Metadata = {
   title: "Remembrance",
   description:
-    "Conclusion of the presentation: how should we, as humanity, remember the Jewish DPs and survivors of the Holocaust?",
+    "Conclusion: how should we, as humanity, remember the Jewish DPs and all those lost in the Holocaust?",
 };
 
 export default function RemembrancePage() {
   return (
     <div className="flex-1">
-      <Slide tone="amber" eyebrow="Conclusion">
-        <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight text-amber-50 sm:text-6xl">
+      <Slide tone="indigo" eyebrow="Conclusion">
+        <h1 className="max-w-3xl font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
           How do we remember
-          <span className="block text-amber-200/85">— as humanity?</span>
+          <span className="mt-2 block text-indigo-200">— as humanity?</span>
         </h1>
-        <p className="mt-8 max-w-3xl text-xl leading-relaxed text-amber-100/90">
-          Survivors did not wait for us. They wrote, sang, photographed,
-          mapped, prayed, and testified — sometimes within months of
-          liberation. Memory was already underway in the camps.
+        <p className="mt-8 max-w-3xl text-xl leading-relaxed text-indigo-100">
+          Survivors did not wait for us. Inside the camps they wrote, sang, photographed, prayed,
+          and testified. Memory was already underway before the ink on any peace treaty was dry.
         </p>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-amber-100/80">
-          So our duty is not to <em>invent</em> their memory. It is to{" "}
-          <em>continue</em> it.
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-indigo-200">
+          So our duty is not to <em>invent</em> their memory. It is to <em>continue</em> it.
         </p>
       </Slide>
 
-      <Slide tone="ivory" eyebrow="Three things we can carry forward">
-        <div className="grid gap-8 md:grid-cols-3">
+      <Slide tone="white" eyebrow="Three things we carry forward">
+        <h2 className="font-serif text-3xl text-slate-900 sm:text-4xl">
+          Three things we can carry forward
+        </h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             {
+              color: "bg-indigo-600 text-white",
               n: "1",
               t: "Name them",
-              p: "When you cite a survivor, say their full name. ‘Survivor’ is a category. A name is a person.",
+              p: "When you cite a survivor, say their full name on screen. 'Survivor' is a category. A name is a person.",
             },
             {
+              color: "bg-amber-400 text-slate-900",
               n: "2",
               t: "Read them in their own language",
-              p: "Many sources are in Yiddish, Hebrew, German, Polish. Translation matters — and so does noticing what gets lost.",
+              p: "Many sources are in Yiddish. Translation matters — and so does noticing what words get lost in translation.",
             },
             {
+              color: "bg-rose-500 text-white",
               n: "3",
               t: "Pass the document on",
               p: "Share the link to the source. Memory only stays public if the next person can also reach the original.",
@@ -48,37 +52,49 @@ export default function RemembrancePage() {
           ].map((card) => (
             <div
               key={card.n}
-              className="rounded-2xl border border-stone-900/10 bg-white/70 p-6 shadow-sm"
+              className={`${card.color} rounded-2xl p-7 shadow-md`}
             >
-              <p className="font-serif text-5xl text-amber-900/80">{card.n}</p>
-              <h3 className="mt-3 font-serif text-2xl text-stone-900">
-                {card.t}
-              </h3>
-              <p className="mt-2 text-stone-700">{card.p}</p>
+              <p className="font-serif text-5xl opacity-60">{card.n}</p>
+              <h3 className="mt-3 font-serif text-2xl">{card.t}</h3>
+              <p className="mt-2 text-base leading-relaxed opacity-90">{card.p}</p>
             </div>
           ))}
         </div>
       </Slide>
 
-      <Slide tone="sepia" eyebrow="Closing line">
-        <blockquote className="max-w-3xl border-l-4 border-stone-900/40 pl-6 font-serif text-3xl italic leading-snug text-stone-900 sm:text-4xl">
-          “She’erit Hapletah” — the surviving remnant — chose to be a
+      <Slide tone="sky" eyebrow="Closing">
+        <blockquote className="max-w-3xl border-l-4 border-indigo-500 pl-7 font-serif text-3xl italic leading-snug text-slate-900 sm:text-4xl">
+          "She'erit Hapletah" — the surviving remnant — chose to be a
           beginning, not an ending. Our remembrance has to choose the same.
         </blockquote>
         <div className="mt-12 flex flex-wrap gap-3">
           <Link
             href="/sources"
-            className="rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-amber-50 transition hover:bg-stone-700"
+            className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-bold text-white shadow transition hover:bg-indigo-700"
           >
-            Show sources slide →
+            Sources slide →
           </Link>
           <Link
             href="/"
-            className="rounded-full border border-stone-900/30 px-6 py-3 text-sm font-medium text-stone-900 transition hover:bg-stone-900/5"
+            className="rounded-full border-2 border-slate-900/30 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
           >
             Back to title
           </Link>
         </div>
+      </Slide>
+
+      {/* Special thanks */}
+      <Slide tone="amber" fill={false}>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-700">
+          Special thanks
+        </p>
+        <p className="mt-3 font-serif text-2xl text-slate-900 sm:text-3xl">
+          Professor <strong>Miriam Borden</strong>
+        </p>
+        <p className="mt-2 max-w-xl text-lg leading-relaxed text-slate-800">
+          Thank you for teaching this course and for bringing these voices into
+          the classroom.
+        </p>
       </Slide>
     </div>
   );
