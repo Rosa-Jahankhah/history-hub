@@ -17,6 +17,7 @@ type HistoryObject = {
   year: string;
   source: string;
   images?: { src: string; caption: string }[];
+  translation?: { heading: string; letter: string; song: string };
   body: string[];
 };
 
@@ -45,10 +46,15 @@ const objects: HistoryObject[] = [
       { src: "/images/deggendorf-3.jpeg", caption: "3" },
       { src: "/images/deggendorf-4.jpeg", caption: "4" },
     ],
+    translation: {
+      heading: "Translation of the pamphlet",
+      letter: `Dear Mr. Atkin,\n\nHalf a year has passed since Germany capitulated. Europe is on the way of being rebuilt. The nations which fought for liberty and democracy lend their hands to those who were victims of Nazi policy. For this purpose a special organization has been established — the UNRRA. Its goal can be expressed simply: fulfilling human duties, helping those who are in want of help.\n\nOur community here was not a community before it has grown into one — because a great part of its members realized that a reconstructing life can be made possible only if everybody feels some responsibility towards the others. This is called community spirit. Whenever and wherever community spirit is ruling, there is justified hope of progress and success.`,
+      song: `Deggendorf, you are the nicest camp for Jewish DPs,\nDeggendorf, and everybody here is happy to be.\nWhen one day we start from here away,\nWe all sing very sadly:\nWe meet again in short time again with you!`,
+    },
     body: [
-      "In the Deggendorf DP camp, survivors printed a pamphlet that included a song written and performed by camp residents. The lyrics were in Yiddish — the everyday language of Eastern European Jewish life — and the themes were homesickness, hope, and the uncertain road ahead.",
-      "The object is small and practical: a printed page, not a monument. But its existence answers an important question. What did survivors do with their first months of freedom? In part, they made culture. They printed things, performed things, and passed them around.",
-      "The choice of Yiddish is itself significant. By 1945, the communities that had spoken Yiddish as their native language — the shtetlekh, the cities, the neighborhoods — had been largely destroyed. To write and sing in Yiddish in a displaced persons camp was to insist that the language, and everything it carried, had survived.",
+      "After the war ended in May 1945, Allied forces set up Displaced Persons camps across Germany and Austria. Jewish survivors were in especially poor health and could not simply go home — many found their houses taken, their families gone, and antisemitism still present in their old towns. Many wanted to emigrate to Palestine, but British immigration quotas blocked them.",
+      "The Deggendorf camp, home to about 2,000 Jewish DPs — many of them survivors of Theresienstadt — became a center of postwar Jewish cultural life. It had two newspapers, a library of 1,700 books, a theater group, a kosher kitchen, and a ritual bath. Survivors were not only waiting. They were rebuilding.",
+      "This pamphlet was made by camp residents as a gift for Carl Atkin, the director of the UNRRA team running the camp. It contains a letter about community spirit and a song — written in English — celebrating Deggendorf as 'the nicest camp for Jewish DPs.' Small as it is, the pamphlet is evidence that survivors were already creating culture, expressing gratitude, and imagining a future.",
     ],
   },
   {
@@ -179,6 +185,26 @@ export default function Home() {
                       </figcaption>
                     </figure>
                   ))}
+                </div>
+              )}
+
+              {/* Translation block */}
+              {obj.translation && (
+                <div className="mt-6 rounded border border-slate-200 bg-slate-50 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                    {obj.translation.heading}
+                  </p>
+                  <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
+                    {obj.translation.letter}
+                  </p>
+                  <div className="mt-5 border-t border-slate-200 pt-5">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                      The Deggendorf Song
+                    </p>
+                    <p className="mt-2 whitespace-pre-line font-serif text-sm italic leading-7 text-slate-700">
+                      {obj.translation.song}
+                    </p>
+                  </div>
                 </div>
               )}
 
