@@ -123,7 +123,7 @@ export default function Home() {
   const [active, setActive] = useState<Tab>("introduction");
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 sm:px-6">
       {/* Tab bar */}
       <div className="sticky top-[126px] z-10 -mx-4 border-b border-slate-200 bg-white sm:-mx-6">
         <div className="flex">
@@ -190,74 +190,83 @@ export default function Home() {
       {active === "evidence" && (
         <section className="py-10">
           <h2 className="font-serif text-3xl text-slate-900">Evidence</h2>
-          <nav className="mt-6 space-y-2 border-l-4 border-slate-200 pl-5">
-            {objects.map((obj) => (
-              <a
-                key={obj.n}
-                href={`#object-${obj.n}`}
-                className="flex flex-wrap items-baseline gap-2 text-sm text-slate-600 hover:text-slate-900"
-              >
-                <span className="shrink-0 font-semibold text-slate-400">{obj.n}.</span>
-                <span className="underline underline-offset-4">{obj.title}</span>
-                <span className="text-slate-400">— {obj.type}, {obj.year}</span>
-              </a>
-            ))}
-          </nav>
 
-          <div className="mt-14 space-y-16">
-            {objects.map((obj) => (
-              <article key={obj.n} id={`object-${obj.n}`}>
-                <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                  Object {obj.n} · {obj.type} · {obj.year}
+          <div className="mt-8 flex gap-8">
+            {/* Object sidebar */}
+            <aside className="hidden w-44 shrink-0 lg:block">
+              <nav className="sticky top-[175px] space-y-1">
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-slate-400">
+                  Objects
                 </p>
-                <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
-
-                {obj.images && obj.images.length > 0 && (
-                  <PhotoCarousel photos={obj.images} title={obj.title} />
-                )}
-
-                {obj.translation && (
-                  <div className="mt-6 rounded border border-slate-200 bg-slate-50 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                      {obj.translation.heading}
-                    </p>
-                    <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
-                      {obj.translation.letter}
-                    </p>
-                    <div className="mt-5 border-t border-slate-200 pt-5">
-                      <p className="whitespace-pre-line font-serif text-sm italic leading-7 text-slate-700">
-                        {obj.translation.song}
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-                  {obj.body.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
-                  ))}
-                </div>
-                <p className="mt-5 text-sm text-slate-400">
-                  Source:{" "}
+                {objects.map((obj) => (
                   <a
-                    href={obj.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-600 underline underline-offset-4 hover:text-slate-900"
+                    key={obj.n}
+                    href={`#object-${obj.n}`}
+                    className="flex items-start gap-2 rounded px-2 py-1.5 text-xs text-slate-500 hover:bg-slate-100 hover:text-slate-900"
                   >
-                    USHMM — Jewish Displaced Persons in Postwar Europe
+                    <span className="mt-px shrink-0 font-bold text-slate-300">{obj.n}</span>
+                    <span className="leading-snug">{obj.title}</span>
                   </a>
-                </p>
-              </article>
-            ))}
-          </div>
+                ))}
+              </nav>
+            </aside>
 
-          <button
-            onClick={() => setActive("interview")}
-            className="mt-14 rounded border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-500 hover:text-slate-900"
-          >
-            View Interview →
-          </button>
+            {/* Object content */}
+            <div className="min-w-0 flex-1 space-y-16">
+              {objects.map((obj) => (
+                <article key={obj.n} id={`object-${obj.n}`} className="scroll-mt-[175px]">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                    Object {obj.n} · {obj.type} · {obj.year}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl text-slate-900">{obj.title}</h3>
+
+                  {obj.images && obj.images.length > 0 && (
+                    <PhotoCarousel photos={obj.images} title={obj.title} />
+                  )}
+
+                  {obj.translation && (
+                    <div className="mt-6 rounded border border-slate-200 bg-slate-50 p-5">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                        {obj.translation.heading}
+                      </p>
+                      <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-700">
+                        {obj.translation.letter}
+                      </p>
+                      <div className="mt-5 border-t border-slate-200 pt-5">
+                        <p className="whitespace-pre-line font-serif text-sm italic leading-7 text-slate-700">
+                          {obj.translation.song}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+                    {obj.body.map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
+                  <p className="mt-5 text-sm text-slate-400">
+                    Source:{" "}
+                    <a
+                      href={obj.source}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 underline underline-offset-4 hover:text-slate-900"
+                    >
+                      USHMM — Jewish Displaced Persons in Postwar Europe
+                    </a>
+                  </p>
+                </article>
+              ))}
+
+              <button
+                onClick={() => setActive("interview")}
+                className="rounded border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-500 hover:text-slate-900"
+              >
+                View Interview →
+              </button>
+            </div>
+          </div>
         </section>
       )}
 
