@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-slate-200 bg-white">
+    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white shadow-sm">
       <div className="mx-auto max-w-3xl px-6 py-5">
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
           Yiddish 103 · Final Project · Spring 2026

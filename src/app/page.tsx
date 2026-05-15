@@ -125,7 +125,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6">
       {/* Tab bar */}
-      <div className="sticky top-[97px] z-10 -mx-4 border-b border-slate-200 bg-white sm:-mx-6">
+      <div className="sticky top-[126px] z-10 -mx-4 border-b border-slate-200 bg-white sm:-mx-6">
         <div className="flex">
           {(["introduction", "evidence", "interview"] as Tab[]).map((tab) => (
             <button

@@ -40,7 +40,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white font-sans text-slate-900">
         <SiteHeader />
-        <div className="sticky top-[57px] z-20 border-b border-slate-300 bg-slate-800 px-6 py-3">
+        <div className="sticky top-[82px] z-20 border-b border-slate-300 bg-slate-800 px-6 py-3">
           <p className="text-center text-sm font-medium leading-snug text-slate-100">
             Dedicated to the innocent men, women, and children who lost their lives in the Holocaust.{" "}
             <span className="text-slate-300">
