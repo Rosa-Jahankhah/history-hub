@@ -280,7 +280,7 @@ export default function Home() {
           </p>
           <div className="mt-6 aspect-video w-full overflow-hidden rounded border border-slate-200 bg-slate-900 shadow-sm">
             <iframe
-              src="https://www.youtube.com/embed/xzeXaqf-xWM"
+              src="https://www.youtube.com/embed/xzeXaqf-xWM?start=37&end=61"
               title="Survivor interview"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
