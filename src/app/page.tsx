@@ -99,14 +99,24 @@ const objects: HistoryObject[] = [
   },
   {
     n: 5,
-    title: "Moyshe Feygnboym, \"Why Historical Commissions?\"",
+    title: "Moyshe Feygnboym: \"Why Historical Commissions?\"",
     type: "Newspaper Article",
     year: "1946",
-    source: COLLECTION,
+    source:
+      "https://perspectives.ushmm.org/item/moyshe-feygnboym-why-historical-commissions/collection/jewish-displaced-persons-in-postwar-europe",
+    images: [
+      { src: "/images/188.png", caption: "1" },
+      { src: "/images/189.png", caption: "2" },
+    ],
+    translation: {
+      heading: "Translation of the article (from Yiddish)",
+      letter: `M. Y. Feygnboym, Head of the Historical Commission\n\nMany among us still ask: Why do we need the Historical Commissions? Is the Nuremberg trial not inundated with documents on the Jews? What can we poor Jews contribute?\n\nAfter liberation we were quickly disappointed. Our neighbors were unwilling to give objective accounts — on the contrary, they tried to diminish the Jewish tragedy, to whitewash it. Churchill told the English Parliament in February 1945 that the Nazis "as people were saying" had supposedly murdered upwards of three million Polish Jews. The Jewish Central Committee had to correct him: it is not "as people were saying" — the Nazis killed 3,250,000 Polish Jews.\n\nThe great powers compiled a lot of material. But they did not have the Jewish problem in mind. Many documents that pertain directly to us are not being compiled by the great powers at all. And even the documents they do have only show how the murderers dealt with us — not how we lived, how we suffered, how we resisted.\n\nBefore the war, historians had the Jewish press, folk culture, community records, literature, pictures. Today all this has disappeared.\n\nWe, the survivors, the living witnesses, must create a foundation for the historians. Therefore, the testimony of every surviving Jew is of immense value. Every song, every photograph, every joke, every creative work — anything that can illuminate the martyrdom of our tragic generation.\n\nIt is the duty of every Jew who survived to make themselves available to the Historical Commissions whenever asked.`,
+      song: `"We, the survivors, the surviving witnesses, must create a foundation for the historian that will take the place of the aforementioned sources so that he may create for himself a clear picture of what happened to us and among us."\n\n— Moyshe Feygnboym, Fun letstn khurbn ("From the Last Extermination"), Munich, 1946`,
+    },
     body: [
-      "Moyshe Feygnboym published this article in the Yiddish-language press of the DP camps. The article argues for the necessity of organized historical commissions — bodies dedicated to collecting survivor testimony, preserving documents, and creating an archive of what had happened.",
-      "His central argument is one of urgency. The witnesses are alive and in one place. The documents exist. The memory is fresh. If this work is not done now, it will not be done at all. Survivors will scatter. Documents will be lost. The world will be left with silence.",
-      "What Feygnboym describes in 1946 would eventually become the Yad Vashem archive in Israel, the USHMM collections in Washington, and the USC Shoah Foundation testimony project — institutions that did not yet exist when he wrote. He was right about the urgency. Reading his article now, it is impossible not to notice that his call was answered, and that you are looking at one of the answers.",
+      "After liberation, Jewish survivors realized quickly that the world was not going to document their experience for them. Neighbors were unwilling to speak honestly. Governments had their own interests. Even the Nuremberg trials, Feygnboym argued, only captured how the murderers acted — not how Jewish people actually lived, resisted, mourned, and held on.",
+      "Moyshe Feygnboym was a survivor of two ghettos in occupied Poland and deportation to Treblinka. In 1946 he became director of the Central Historical Commission in Munich, which collected 2,500 testimonies between 1946 and 1948 — in Yiddish, German, Polish, and Hebrew. This article was published as the opening piece of the commission's journal, Fun letstn khurbn (\"From the Last Extermination\"). His argument was simple: survivors are here now, together, and their testimony is irreplaceable. If it is not collected now, it never will be.",
+      "The institutions Feygnboym was calling for did not yet exist when he wrote — Yad Vashem, the USHMM, the USC Shoah Foundation would all come later. He was right about the urgency. This article, preserved in the USHMM collection, is itself one of the answers to his call.",
     ],
   },
 ];
