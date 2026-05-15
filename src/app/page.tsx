@@ -30,7 +30,7 @@ const objects: HistoryObject[] = [
     source:
       "https://perspectives.ushmm.org/item/herbert-friedman-purim-play-photograph/collection/jewish-displaced-persons-in-postwar-europe",
     images: [
-      { src: "/images/purim-photo.jpg", caption: "Purim play at Landsberg DP camp, 1946" },
+      { src: "/images/purim-photo.jpeg", caption: "Purim play at Landsberg DP camp, 1946" },
     ],
     body: [
       "Even as DP camps struggled to meet basic physical needs, Jewish survivors set out to rebuild Jewish culture. Their efforts took many forms — cultural events, education, political activism. One key question this raises: how did these camps, despite all their hardships, become centers of Jewish life after the Holocaust?",
