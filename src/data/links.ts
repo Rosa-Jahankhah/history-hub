@@ -6,53 +6,57 @@ export type HistoryLink = {
   tags: string[];
 };
 
+/**
+ * Sources cited in this presentation. The primary one for the project is the
+ * USHMM "Experiencing History" collection on Jewish Displaced Persons.
+ */
 export const historyLinks: HistoryLink[] = [
   {
-    id: "library-congress",
-    title: "Library of Congress Digital Collections",
-    url: "https://www.loc.gov/collections/",
+    id: "ushmm-dp-collection",
+    title: "USHMM — Jewish Displaced Persons in Postwar Europe",
+    url: "https://perspectives.ushmm.org/collection/jewish-displaced-persons-in-postwar-europe",
     description:
-      "Digitized manuscripts, maps, photos, and newspapers from the United States and worldwide.",
-    tags: ["primary sources", "maps", "newspapers"],
+      "Primary collection used in this presentation: 20 sources (letters, newsreels, photographs, songs, reports) from Jewish DP camps in postwar Europe.",
+    tags: ["primary source", "USHMM", "DP camps"],
   },
   {
-    id: "internet-archive",
-    title: "Internet Archive",
-    url: "https://archive.org/",
+    id: "ushmm-encyclopedia-dp",
+    title: "USHMM Holocaust Encyclopedia — Displaced Persons",
+    url: "https://encyclopedia.ushmm.org/content/en/article/displaced-persons",
     description:
-      "Books, audio, video, and web captures—useful for tracing how sites and movements documented themselves over time.",
-    tags: ["books", "web archive", "audio"],
+      "Background article on the postwar DP crisis, UNRRA, and Jewish survivors’ situation across Allied zones.",
+    tags: ["encyclopedia", "context"],
   },
   {
-    id: "yivo",
-    title: "YIVO Encyclopedia of Jews in Eastern Europe",
-    url: "https://encyclopedia.yivo.org/",
+    id: "ushmm-harrison",
+    title: "USHMM — The Harrison Report (1945)",
+    url: "https://encyclopedia.ushmm.org/content/en/article/the-harrison-report",
     description:
-      "Scholarly articles on places, culture, and historical events across Eastern European Jewish life.",
-    tags: ["encyclopedia", "Eastern Europe"],
+      "Background and excerpts from Earl G. Harrison’s September 1945 report to President Truman on the plight of Jewish DPs.",
+    tags: ["primary source", "1945", "policy"],
   },
   {
-    id: "europeana",
-    title: "Europeana",
-    url: "https://www.europeana.eu/",
+    id: "yivo-dp",
+    title: "YIVO Encyclopedia — Displaced Persons",
+    url: "https://yivoencyclopedia.org/article.aspx/Displaced_Persons",
     description:
-      "Aggregated cultural heritage from European museums, libraries, and archives.",
-    tags: ["Europe", "images", "metadata"],
+      "Scholarly overview of Jewish DPs, the She’erit Hapletah (the surviving remnant), and emigration routes.",
+    tags: ["encyclopedia", "scholarly"],
   },
   {
-    id: "national-archives",
-    title: "U.S. National Archives",
-    url: "https://www.archives.gov/",
+    id: "vha",
+    title: "USC Shoah Foundation — Visual History Archive",
+    url: "https://sfi.usc.edu/vha",
     description:
-      "Federal records, exhibits, and research tools for U.S. political and social history.",
-    tags: ["government", "U.S."],
+      "Tens of thousands of survivor video testimonies. Use a short clip in your video and credit the interviewee.",
+    tags: ["oral history", "testimony"],
   },
   {
-    id: "chronicling-america",
-    title: "Chronicling America (Library of Congress)",
-    url: "https://chroniclingamerica.loc.gov/",
+    id: "fortunoff",
+    title: "Fortunoff Video Archive (Yale)",
+    url: "https://fortunoff.library.yale.edu/",
     description:
-      "Historic American newspapers with rich metadata for place and date-based research.",
-    tags: ["newspapers", "U.S."],
+      "Holocaust survivor video testimony archive — selected clips publicly available.",
+    tags: ["oral history", "testimony"],
   },
 ];

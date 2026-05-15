@@ -4,40 +4,39 @@ export type ArchiveEntry = {
   summary: string;
   period: string;
   themes: string[];
-  /** Short note on why this entry matters for students or readers */
   whyItMatters: string;
 };
 
 export const archiveEntries: ArchiveEntry[] = [
   {
-    slug: "reading-newspapers-as-history",
-    title: "Reading newspapers as history",
+    slug: "what-is-a-dp",
+    title: "What is a ‘Displaced Person’?",
     summary:
-      "Newspapers are written in the moment—not with hindsight. That makes them vivid, but also biased by audience, advertisers, and politics.",
-    period: "Method",
-    themes: ["sources", "bias", "newspapers"],
+      "‘DP’ was a legal and social category invented by the Allies in 1943–45 to manage roughly 20 million people on the move at the end of World War II. About 1.5 million remained in occupied Germany and Austria in September 1945; about 300,000 of them were Jewish survivors of the Holocaust.",
+    period: "1943–1951",
+    themes: ["definitions", "policy", "UNRRA"],
     whyItMatters:
-      "Learning to read for framing (what is on page one vs. buried) is a transferable skill for any period you study.",
+      "‘DP’ sounds bureaucratic, but it determined who got food, housing, and a path out of Europe. Categories shape lives.",
   },
   {
-    slug: "migration-and-memory",
-    title: "Migration and memory",
+    slug: "the-harrison-report",
+    title: "The Harrison Report and what changed",
     summary:
-      "People carry stories across borders. Archives often hold departure and arrival traces in different languages and bureaucracies.",
-    period: "19th–20th centuries",
-    themes: ["migration", "oral history", "archives"],
+      "Earl G. Harrison’s September 1945 report told President Truman that Jewish survivors were being warehoused, sometimes alongside their former tormentors, and that conditions were unacceptable. After the report, the U.S. zone began to recognize Jewish DPs as a distinct group.",
+    period: "1945",
+    themes: ["policy", "advocacy", "U.S. zone"],
     whyItMatters:
-      "Connecting records across countries can reconstruct lives that official histories flatten.",
+      "It is one of the clearest cases where a single document changed Allied policy. Useful for talking about why writing things down matters in history.",
   },
   {
-    slug: "yiddish-press-and-public-life",
-    title: "The Yiddish press and public life",
+    slug: "rebuilding-jewish-life",
+    title: "Rebuilding Jewish life inside the camps",
     summary:
-      "Yiddish newspapers linked communities across cities. They reported labor, culture, local crime, and international events—sometimes in the same issue.",
-    period: "1880s–1940s",
-    themes: ["Yiddish", "press", "Jewish history"],
+      "Yiddish theater, Purim plays, songs, illustrated albums, historical commissions, religious courts that issued widowhood certificates so women could remarry — survivors did not wait to be remembered. They built institutions of memory in the camps themselves.",
+    period: "1945–1951",
+    themes: ["culture", "religion", "memory"],
     whyItMatters:
-      "The Yiddish press is a major primary-source window into daily politics and culture in Eastern Europe and the Americas.",
+      "These are the everyday acts that turn ‘survivors’ back into a people with a future, not only a past.",
   },
 ];
 

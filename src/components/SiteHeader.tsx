@@ -1,32 +1,43 @@
 import Link from "next/link";
 
 const nav = [
-  { href: "/", label: "Home" },
-  { href: "/archive", label: "Archive" },
+  { href: "/", label: "Title" },
+  { href: "/evidence", label: "Evidence" },
+  { href: "/voices", label: "Survivor Voices" },
+  { href: "/remembrance", label: "Remembrance" },
+  { href: "/sources", label: "Sources" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-amber-900/15 bg-[#faf7f2]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
-        <Link href="/" className="group flex flex-col">
-          <span className="font-serif text-lg tracking-tight text-amber-950 group-hover:text-amber-800 sm:text-xl">
-            History Hub
+    <header className="sticky top-0 z-30 border-b border-stone-900/10 bg-[#f6f1e7]/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+        <Link href="/" className="group flex flex-col leading-tight">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-700/70">
+            Yiddish 103 · Final project
           </span>
-          <span className="text-xs text-amber-900/60">
-            Links, archive notes, and a research assistant
+          <span className="font-serif text-base text-stone-900 group-hover:text-stone-700 sm:text-lg">
+            She’erit Hapletah — Jewish DPs in Postwar Europe
           </span>
         </Link>
-        <nav className="flex items-center gap-4 text-sm font-medium text-amber-950/80">
+        <nav className="hidden gap-1 text-sm font-medium text-stone-800 sm:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-2 py-1 transition hover:bg-amber-900/10 hover:text-amber-950"
+              className="rounded-md px-2.5 py-1.5 transition hover:bg-stone-900/10"
             >
               {item.label}
             </Link>
           ))}
+        </nav>
+        <nav className="flex gap-2 text-sm font-medium text-stone-800 sm:hidden">
+          <Link
+            href="/evidence"
+            className="rounded-md bg-stone-900/5 px-2.5 py-1 hover:bg-stone-900/10"
+          >
+            Slides →
+          </Link>
         </nav>
       </div>
     </header>
