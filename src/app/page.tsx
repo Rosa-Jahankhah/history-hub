@@ -177,7 +177,7 @@ export default function Home() {
       <main className="min-w-0 flex-1 text-slate-800">
 
         {/* Introduction */}
-        <section id="introduction" className="mb-14 scroll-mt-24">
+        <section id="introduction" className="snap-section mb-14 scroll-mt-24 pt-8">
           <h2 className="font-serif text-3xl text-slate-900">Introduction</h2>
           <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
             <p>
@@ -205,7 +205,7 @@ export default function Home() {
         </section>
 
         {/* Evidence */}
-        <section id="evidence" className="mb-14 scroll-mt-24">
+        <section id="evidence" className="snap-section mb-14 scroll-mt-24 pt-8">
           <h2 className="font-serif text-3xl text-slate-900">Evidence</h2>
           <nav className="mt-6 space-y-2 border-l-4 border-slate-200 pl-5">
             {objects.map((obj) => (
@@ -271,7 +271,7 @@ export default function Home() {
         </section>
 
         {/* Interview */}
-        <section id="interview" className="mb-14 scroll-mt-24">
+        <section id="interview" className="snap-section mb-14 scroll-mt-24 pt-8">
           <h2 className="font-serif text-3xl text-slate-900">Interview</h2>
           <p className="mt-4 text-base leading-8 text-slate-700">
             The following interview provides a survivor's firsthand account. Listen carefully to

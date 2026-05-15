@@ -24,3 +24,14 @@ body {
   background: #ffffff;
   color: #1e293b;
 }
+
+/* Full-page scroll snap — one section at a time */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: calc(100vh - 97px); /* viewport minus sticky header + dedication bar */
+}
